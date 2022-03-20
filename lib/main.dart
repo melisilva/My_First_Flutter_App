@@ -36,7 +36,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp>{ //Can be persistent
    final _questions= const[
     {
-      'questionText':'What\s my favorite color?',
+      'questionText':"What's my favorite color?",
       'answers':[
         {'text':'Purple', 'score':10},
         {'text':'Green','score':0},
@@ -44,7 +44,7 @@ class _MyAppState extends State<MyApp>{ //Can be persistent
       ]
     },
     {
-      'questionText': 'What\s my favorite animal?',
+      'questionText': "What's my favorite animal?",
       'answers':[
         {'text':'Platypus','score':5},
         {'text':'Dog','score':10},
@@ -52,7 +52,7 @@ class _MyAppState extends State<MyApp>{ //Can be persistent
       ]
     },
     {
-      'questionText': 'What\s my favorite Green Lantern?',
+      'questionText': "What's my favorite Green Lantern?",
       'answers':[
         {'text':'Jessica Cruz','score':10},
         {'text':'Guy Gardner','score':0},
@@ -63,6 +63,13 @@ class _MyAppState extends State<MyApp>{ //Can be persistent
   ];
   var _questionIndex=0;
   var _totalScore=0;
+
+  void _resetQuiz() {
+    setState(() {
+      _questionIndex = 0;
+      _totalScore = 0;
+    });
+  }
 
   void _answerQuestion(int score){
     _totalScore+=score;
@@ -97,7 +104,7 @@ class _MyAppState extends State<MyApp>{ //Can be persistent
               answerQuestion: _answerQuestion,
               questionIndex: _questionIndex,
               questions: _questions)
-        : Result(_totalScore),));
+        : Result(_totalScore,_resetQuiz)));
       //else do this
 
   }
