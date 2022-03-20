@@ -1,5 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+//Default, in Dart each file is its mini library and the things defined in a file are only used in the file
+//They can be used in other files however, unless they have a '_' before their name, if so then they are private classes and can only be used in the file in which they are defined
 
 //void main() => runApp(MyApp()); Dart uses => when there's only one expression
 void main(){
@@ -23,19 +25,20 @@ class MyApp extends StatefulWidget {
   @override
   State<StatefulWidget> createState(){
     //TODO: implement createState
-    return MyAppState();
+    return _MyAppState();
   }
 }
 
-class MyAppState extends State<MyApp>{ //Can be persistent
-  var questionIndex=0;
+class _MyAppState extends State<MyApp>{ //Can be persistent
+  var _questionIndex=0;
 
-  void answerQuestion(){
+  void _answerQuestion(){
     setState(() { //we need to tell flutter we are gonna change the state in order for it to change something
-      questionIndex++;
+      _questionIndex++;
     });
-    print(questionIndex);
+    print(_questionIndex);
   }
+
   @override //decorator - makes code cleaner and clearer
   Widget build(BuildContext context){
     //home is a core widget
@@ -54,9 +57,9 @@ class MyAppState extends State<MyApp>{ //Can be persistent
     return MaterialApp(home: Scaffold(
       appBar: AppBar(title: Text('My First App'),),
       body: Column(children: [
-        Text(questions[questionIndex]),
+        Text(questions[_questionIndex]),
        ElevatedButton(
-           onPressed: answerQuestion, //to just point to a function instead of executing it, you use the function's name without the parenthesis + also do this when you have functions that don't return anything
+           onPressed: _answerQuestion, //to just point to a function instead of executing it, you use the function's name without the parenthesis + also do this when you have functions that don't return anything
            child: Text('Answer 1')
        ), //onPressed:x, x is the function to be activated once you press the button
         ElevatedButton(
