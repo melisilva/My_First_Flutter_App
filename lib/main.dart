@@ -34,24 +34,38 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp>{ //Can be persistent
-  static const _questions=[
+   final _questions= const[
     {
       'questionText':'What\s my favorite color?',
-      'answers':['Purple','Red','Blue']
+      'answers':[
+        {'text':'Purple', 'score':10},
+        {'text':'Green','score':0},
+        {'text':'Blue','score':5}
+      ]
     },
     {
       'questionText': 'What\s my favorite animal?',
-      'answers':['Platypus', 'Dog','Cat']
+      'answers':[
+        {'text':'Platypus','score':5},
+        {'text':'Dog','score':10},
+        {'text':'Snake','score':0}
+      ]
     },
     {
       'questionText': 'What\s my favorite Green Lantern?',
-      'answers':['Jessica Cruz','Hal Jordan', 'John Stewart']
+      'answers':[
+        {'text':'Jessica Cruz','score':10},
+        {'text':'Guy Gardner','score':0},
+        {'text':'Simon Baz','score':5}
+      ]
     }
 
   ];
   var _questionIndex=0;
+  var _totalScore=0;
 
-  void _answerQuestion(){
+  void _answerQuestion(int score){
+    _totalScore+=score;
     setState(() { //we need to tell flutter we are gonna change the state in order for it to change something
       _questionIndex++;
     });
@@ -83,7 +97,7 @@ class _MyAppState extends State<MyApp>{ //Can be persistent
               answerQuestion: _answerQuestion,
               questionIndex: _questionIndex,
               questions: _questions)
-        : Result(),));
+        : Result(_totalScore),));
       //else do this
 
   }
