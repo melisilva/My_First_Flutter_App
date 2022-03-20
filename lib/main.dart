@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-import './question.dart';
+import './quiz.dart';
 import './answer.dart';
+import './result.dart';
 
 //Default, in Dart each file is its mini library and the things defined in a file are only used in the file
 //They can be used in other files however, unless they have a '_' before their name, if so then they are private classes and can only be used in the file in which they are defined
@@ -33,6 +34,21 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp>{ //Can be persistent
+  static const _questions=[
+    {
+      'questionText':'What\s my favorite color?',
+      'answers':['Purple','Red','Blue']
+    },
+    {
+      'questionText': 'What\s my favorite animal?',
+      'answers':['Platypus', 'Dog','Cat']
+    },
+    {
+      'questionText': 'What\s my favorite Green Lantern?',
+      'answers':['Jessica Cruz','Hal Jordan', 'John Stewart']
+    }
+
+  ];
   var _questionIndex=0;
 
   void _answerQuestion(){
@@ -40,6 +56,12 @@ class _MyAppState extends State<MyApp>{ //Can be persistent
       _questionIndex++;
     });
     print(_questionIndex);
+    if(_questionIndex<_questions.length){
+      print('We have more questions');
+    }
+    else{
+      print('No more questions');
+    }
   }
 
   @override //decorator - makes code cleaner and clearer
@@ -53,33 +75,20 @@ class _MyAppState extends State<MyApp>{ //Can be persistent
     //items above each other->Column(); items next to each other->Row()
     //Dart has the concept of list
 
-    var questions=[
-      {
-        'questionText':'What\s my favorite color?',
-        'answers':['Purple','Red','Blue']
-      },
-      {
-        'questionText': 'What\s my favorite animal?',
-        'answers':['Platypus', 'Dog','Cat']
-      },
-      {
-        'questionText': 'What\s my favorite Green Lantern?',
-        'answers':['Jessica Cruz','Hal Jordan', 'John Stewart']
-      }
 
-    ];
     return MaterialApp(home: Scaffold(
       appBar: AppBar(title: Text('My First App'),),
-      body: Column(children: [
-        Question(questions[_questionIndex]['questionText']), //this is how you access a map
-      //function(address) we're passing around is known as callback because the receiving widget calls it in the future
-      //forwarding the pointer to the function
-        ...(questions[_questionIndex]['answers'] as List<String>).map((answer){
-          return Answer(_answerQuestion, answer);
-        }).toList() //... take a list and they pull all the values in it out and add them to the surrounding list as individual values so we don't add a list to a list but the values of a list to a list
-      ],),
-    ),);
+      body: _questionIndex<_questions.length ?
+          Quiz(
+              answerQuestion: _answerQuestion,
+              questionIndex: _questionIndex,
+              questions: _questions)
+        : Result(),));
+      //else do this
+
   }
 }
 
 //Normally you should only have one widget per file, unless they are widgets that depend on each other and you don't count on having to use them anywhere else
+//const == Compile Time Constant
+//final == Run Time Constant
