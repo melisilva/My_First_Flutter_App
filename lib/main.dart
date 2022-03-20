@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 //void main() => runApp(MyApp()); Dart uses => when there's only one expression
@@ -13,10 +14,27 @@ void main(){
 //Gonna create a class that will be the widget that we see in the app
 //We can only extend one class at a time
 //StatelessWidget is a class that allows us to create our own widgets
-class MyApp extends StatelessWidget{
+//StatelessWidget as the name suggests can't have states
+//Why is there widgets that don't have state? They are widgets that are only concerned with outputing data, like Text: it only shows writing and clicking on it doesn't do anything
+
+
+class MyApp extends StatefulWidget {
+
+  @override
+  State<StatefulWidget> createState(){
+    //TODO: implement createState
+    return MyAppState();
+  }
+}
+
+class MyAppState extends State<MyApp>{ //Can be persistent
   var questionIndex=0;
+
   void answerQuestion(){
-    questionIndex++;
+    setState(() { //we need to tell flutter we are gonna change the state in order for it to change something
+      questionIndex++;
+    });
+    print(questionIndex);
   }
   @override //decorator - makes code cleaner and clearer
   Widget build(BuildContext context){
