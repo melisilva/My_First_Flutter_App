@@ -4,18 +4,18 @@ This project was made in order to get comfortable with both Flutter and Dart.
 
 The app is essentially a friendship test with various questions and each answer has a different score attributed to them. Depending on the score obtained by a person, a different message will pop up.
 
-Made with the guidance of the following youtube tutorial: https://www.youtube.com/watch?v=x0uinJvhNxI
+Made with the guidance of the following Youtube tutorial: https://www.youtube.com/watch?v=x0uinJvhNxI
 
 ### Some in app screenshots
 
-![image-20220320182254382](C:\Users\Melissa Silva\AppData\Roaming\Typora\typora-user-images\image-20220320182254382.png)
+![color](photos/favorite_color.png)
 
-![image-20220320182310783](C:\Users\Melissa Silva\AppData\Roaming\Typora\typora-user-images\image-20220320182310783.png)
+![animal](photos/favorite_animal.png)
 
-![image-20220320182325216](C:\Users\Melissa Silva\AppData\Roaming\Typora\typora-user-images\image-20220320182325216.png)
+![green_lantern](photos/favorite_gl.png)
 
-![image-20220320182336927](C:\Users\Melissa Silva\AppData\Roaming\Typora\typora-user-images\image-20220320182336927.png)
+![best](photos/best_result.png)
 
-![image-20220320182351641](C:\Users\Melissa Silva\AppData\Roaming\Typora\typora-user-images\image-20220320182351641.png)
+![moderate](photos/moderate_result.png)
 
-![image-20220320182416316](C:\Users\Melissa Silva\AppData\Roaming\Typora\typora-user-images\image-20220320182416316.png)
+![worst](photos/worst_result.png)
