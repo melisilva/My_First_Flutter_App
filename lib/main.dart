@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import './question.dart';
+
 //Default, in Dart each file is its mini library and the things defined in a file are only used in the file
 //They can be used in other files however, unless they have a '_' before their name, if so then they are private classes and can only be used in the file in which they are defined
 
@@ -57,7 +59,7 @@ class _MyAppState extends State<MyApp>{ //Can be persistent
     return MaterialApp(home: Scaffold(
       appBar: AppBar(title: Text('My First App'),),
       body: Column(children: [
-        Text(questions[_questionIndex]),
+        Question(questions[_questionIndex]),
        ElevatedButton(
            onPressed: _answerQuestion, //to just point to a function instead of executing it, you use the function's name without the parenthesis + also do this when you have functions that don't return anything
            child: Text('Answer 1')
@@ -76,3 +78,5 @@ class _MyAppState extends State<MyApp>{ //Can be persistent
     ),);
   }
 }
+
+//Normally you should only have one widget per file, unless they are widgets that depend on each other and you don't count on having to use them anywhere else
