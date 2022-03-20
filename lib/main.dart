@@ -98,7 +98,8 @@ class _MyAppState extends State<MyApp>{ //Can be persistent
 
 
     return MaterialApp(home: Scaffold(
-      appBar: AppBar(title: Text('My First App'),),
+      appBar: AppBar(title: Text('My First App'),
+          backgroundColor: Colors.deepPurpleAccent,),
       body: _questionIndex<_questions.length ?
           Quiz(
               answerQuestion: _answerQuestion,
