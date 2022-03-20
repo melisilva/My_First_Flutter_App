@@ -1,16 +1,21 @@
-# flutter_complete_guide
+# My First Flutter App
 
-A new Flutter project.
+This project was made in order to get comfortable with both Flutter and Dart.
 
-## Getting Started
+The app is essentially a friendship test with various questions and each answer has a different score attributed to them. Depending on the score obtained by a person, a different message will pop up.
 
-This project is a starting point for a Flutter application.
+Made with the guidance of the following youtube tutorial: https://www.youtube.com/watch?v=x0uinJvhNxI
 
-A few resources to get you started if this is your first Flutter project:
+### Some in app screenshots
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+![image-20220320182254382](C:\Users\Melissa Silva\AppData\Roaming\Typora\typora-user-images\image-20220320182254382.png)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![image-20220320182310783](C:\Users\Melissa Silva\AppData\Roaming\Typora\typora-user-images\image-20220320182310783.png)
+
+![image-20220320182325216](C:\Users\Melissa Silva\AppData\Roaming\Typora\typora-user-images\image-20220320182325216.png)
+
+![image-20220320182336927](C:\Users\Melissa Silva\AppData\Roaming\Typora\typora-user-images\image-20220320182336927.png)
+
+![image-20220320182351641](C:\Users\Melissa Silva\AppData\Roaming\Typora\typora-user-images\image-20220320182351641.png)
+
+![image-20220320182416316](C:\Users\Melissa Silva\AppData\Roaming\Typora\typora-user-images\image-20220320182416316.png)
